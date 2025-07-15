@@ -3,6 +3,7 @@ Carga de datos para la aplicación de reservas de laboratorios
 
 # Fichero de configuracion de los parametros de la aplicación, 
 las rutas tendran que ser modificadas a las rutas del servidor:
+
 {
     "db_host": "danae03.unizar.es",
     "db_user": "tauadm",
@@ -23,21 +24,23 @@ las rutas tendran que ser modificadas a las rutas del servidor:
     "manuales": "D:\\Proyectos\\DatosExcel\\reservas_manual_25_26.xlsx",
     "gruposacentro": "D:\\Proyectos\\DatosExcel\\resolucion_conflictos.csv"
 }
-virtualeslsi: fichero que proporciona Carlos con las cortinas virtuales de LSI
-virtualesatc: fichero que proporciona Carlos con las cortinas virtuales de ATC
-virtualesisa: fichero que proporciona Carlos con las cortinas virtuales de ISA
-restriccioneslsi: fichero que proporciona Carlos con las restricciones de laboratorios de LSI
-restriccionesatc: fichero que proporciona Carlos con las restricciones de laboratorios de ATC
-restriccionesisa: fichero que proporciona Carlos con las restricciones de laboratorios de ISA
-lugaresisa: fichero que proporciona Carlos con los lugares donde se impartiran practicas de ISA
-lugaresatc: fichero que proporciona Carlos con los lugares donde se impartiran practicas de ATC
-lugareslsi: fichero que proporciona Carlos con los lugares donde se impartiran practicas de LSI
-calendario: fichero con los dias de calendario EINA que proporciona Alberto
-manuales: fichero con las reservas que se definen de forma manual por Carlos
 
-url: point de api de odile
+    
+- virtualeslsi: fichero que proporciona Carlos con las cortinas virtuales de LSI
+- virtualesatc: fichero que proporciona Carlos con las cortinas virtuales de ATC
+- virtualesisa: fichero que proporciona Carlos con las cortinas virtuales de ISA
+- restriccioneslsi: fichero que proporciona Carlos con las restricciones de laboratorios de LSI
+- restriccionesatc: fichero que proporciona Carlos con las restricciones de laboratorios de ATC
+- restriccionesisa: fichero que proporciona Carlos con las restricciones de laboratorios de ISA
+- lugaresisa: fichero que proporciona Carlos con los lugares donde se impartiran practicas de ISA
+- lugaresatc: fichero que proporciona Carlos con los lugares donde se impartiran practicas de ATC
+- lugareslsi: fichero que proporciona Carlos con los lugares donde se impartiran practicas de LSI
+- calendario: fichero con los dias de calendario EINA que proporciona Alberto
+- manuales: fichero con las reservas que se definen de forma manual por Carlos
 
-reservas: carpeta donde se encuentran los ficheros JSON descargados de Sigma.
+- url: point de api de odile
+
+- reservas: carpeta donde se encuentran los ficheros JSON descargados de Sigma.
 
 # Ficheros que lo componen:
 
