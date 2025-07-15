@@ -1,7 +1,7 @@
 # Reservas_laboratorios
 Carga de datos para la aplicación de reservas de laboratorios
 
-# Fichero de configuracion de los parametros de la aplicación, 
+## Fichero de configuracion de los parametros de la aplicación, 
 las rutas tendran que ser modificadas a las rutas del servidor:
 
 {
@@ -25,6 +25,7 @@ las rutas tendran que ser modificadas a las rutas del servidor:
     "gruposacentro": "D:\\Proyectos\\DatosExcel\\resolucion_conflictos.csv"
 }
 
+
     
 - virtualeslsi: fichero que proporciona Carlos con las cortinas virtuales de LSI
 - virtualesatc: fichero que proporciona Carlos con las cortinas virtuales de ATC
@@ -42,7 +43,7 @@ las rutas tendran que ser modificadas a las rutas del servidor:
 
 - reservas: carpeta donde se encuentran los ficheros JSON descargados de Sigma.
 
-# Ficheros que lo componen:
+## Ficheros que lo componen:
 
 - TratarJsonOdile.py aplicación que carga los datos de las aplicaciones desde Odile del departamento
 - TratarExcel.py aplicación que carga los datos de las excel de cortinas virtuales, restricciones, lugares.
@@ -52,4 +53,4 @@ las rutas tendran que ser modificadas a las rutas del servidor:
 - GenerarInformeCentro.py aplicación que genera una excel para que se pase a Centro y ellos incorporen a mano los datos de todas en Sigma.
 - Sabana.py aplicación que genera una excel para comprobación de datos por parte de Carlos.
 
-  # Importante leer documento TAU.pdf.
+## Importante leer documento TAU.pdf.
