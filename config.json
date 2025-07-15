@@ -1,0 +1,20 @@
+{
+    "db_host": "danae03.unizar.es",
+    "db_user": "tauadm",
+    "db_password": "aEdi-660/pivEry",
+    "db_name": "tau",
+    "virtualeslsi": "D:\\Proyectos\\DatosExcel\\Cortina virtual LSI.xlsx",
+    "virtualesatc": "D:\\Proyectos\\DatosExcel\\Cortina virtual ATC.xlsx",
+    "virtualesisa": "D:\\Proyectos\\DatosExcel\\Cortina virtual ISA.xlsx",
+    "restriccioneslsi":"D:\\Proyectos\\DatosExcel\\Restricciones laboratorios LSI.xlsx",
+    "restriccionesatc":"D:\\Proyectos\\DatosExcel\\Restricciones laboratorios ATC.xlsx",
+    "restriccionesisa":"D:\\Proyectos\\DatosExcel\\Restricciones laboratorios ISA.xlsx",
+    "lugaresisa":"D:\\Proyectos\\DatosExcel\\Lugar practicas ISA.xlsx",
+    "lugaresatc":"D:\\Proyectos\\DatosExcel\\Lugar practicas ATC.xlsx",
+    "lugareslsi":"D:\\Proyectos\\DatosExcel\\Lugar practicas LSI.xlsx",
+    "url": "https://docenciadiis:docenfacildiis@odile.unizar.es/api/asignaturaGrupoProfesor/2025/110/5007",
+    "reservas": "D:\\Proyectos\\DatosExcel\\reservas\\",
+    "calendario": "D:\\Proyectos\\DatosExcel\\calendario.csv",
+    "manuales": "D:\\Proyectos\\DatosExcel\\reservas_manual_25_26.xlsx",
+    "gruposacentro": "D:\\Proyectos\\DatosExcel\\resolucion_conflictos.csv"
+}
