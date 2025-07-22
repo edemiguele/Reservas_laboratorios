@@ -30,10 +30,10 @@ for clave, valor in config.items():
             lector = csv.reader(csvfile, delimiter=';')  # Usa el delimitador adecuado
             for fila in lector:
                 if len(fila) < 4:
-                    continue  # Saltar filas incompletas
-                fecha = fila[1]  # Segunda columna (índice 1)
-                diaeina = fila[3]  # Cuarta columna (índice 3)
-                # Actualizar la tabla reservas
+                    continue  # Saltar filas de cabecera
+                fecha = fila[1]  
+                diaeina = fila[3] 
+                # Actualizar la tabla prereservas
                 consulta = """
                     UPDATE prereservas
                     SET diaEina = %s

@@ -49,7 +49,6 @@ for clave, valor in config.items():
         contador_excel += 1
         print(f"Clave: {clave}, Valor: {valor}")
 
-        # Ruta del archivo Excel
         ruta_excel = valor
 
         # Cargar el archivo Excel
@@ -70,9 +69,6 @@ for clave, valor in config.items():
             idgrupo = fila[3]
             idespacio = fila[4]
             numpractica = fila[5]
-    
-            # Imprimir los valores de la fila (opcional para depuración)
-            print(f"codAsignatura: {cod_asignatura}, inicio: {inicio}, fin: {fin}, idgrupo: {idgrupo}, idespacio:{idespacio}, numpractica:{numpractica}")
 
             # Preparar la consulta SQL
             #Tabla Asignaturas: codAsignatura, nbAsignatura, codArea, acronimo, centro, cuatrimestre, manual, vinculada, activo, aulacentro, aulateoria, rotada

@@ -44,7 +44,7 @@ directorio = config["reservas"]
 for ruta_archivo in glob.glob(os.path.join(directorio, "*.json")):
     print(f"ruta_archivo: {ruta_archivo}")
     
-    nombre_archivo = os.path.basename(ruta_archivo)  # 'reservas_25802.json'
+    nombre_archivo = os.path.basename(ruta_archivo)  #ejemplo 'reservas_25802.json'
     valor = nombre_archivo.rsplit('_', 1)[-1].replace('.json', '')
     
     #partes = nombre_archivo.split('_')       # ['reservas', '430', '3.json']
@@ -54,8 +54,6 @@ for ruta_archivo in glob.glob(os.path.join(directorio, "*.json")):
 
     # Recoger las asignaturas del plan.
     cursor.execute(
-    #    "SELECT codAsignatura FROM asignaturas WHERE codplan = %s",
-    #    (valor,)
         "SELECT idAsignatura FROM asignaturas WHERE idAsignatura = %s and activo = 1 and vinculada = 0", (valor,)
     )
     asignaturas = cursor.fetchall()
@@ -65,12 +63,11 @@ for ruta_archivo in glob.glob(os.path.join(directorio, "*.json")):
     if asignaturas:  # Si la lista no está vacía, hay asignaturas
         with open(ruta_archivo, "r", encoding="utf-8") as f:
             data = json.load(f)
-            # Aquí puedes procesar el contenido de cada archivo JSON
+           
             if isinstance(data, list) and len(data) > 0:
-                #print("El JSON esta lleno.")
-                # Ejemplo: recorrer los elementos del JSON
+
+                # Recorrer los elementos del JSON
                 for item in data:
-                    # Procesa cada item como necesites
                     
                     valores_vistos = set()
                     registros_unicos = []
@@ -97,13 +94,13 @@ for ruta_archivo in glob.glob(os.path.join(directorio, "*.json")):
                                 )
                                 existe = cursor.fetchone()[0] > 0
                                 if existe:
-
+                                    #fecha de inicio
                                     start = item["start"]
                                     if isinstance(start, str):
                                         fecha_start = datetime.fromisoformat(start)
                                     else:
                                         fecha_start = start
-
+                                    #extraemos el año de inicio del curso
                                     if fecha_start.month >= 9:
                                         inicio_anyo_curso = fecha_start.year
                                     else:
@@ -180,7 +177,6 @@ for ruta_archivo in glob.glob(os.path.join(directorio, "*.json")):
                 print(f"{valor} NO tiene practicas de laboratorio.")
     else:
         print(f"{valor} NO esta en asignaturas.")
-        # Si quieres, puedes saltar el procesamiento de este archivo
         continue
 
 # Una vez que se han insertado todos los datos tenemos que realizar una excel con los datos de reservas de asignaturas manuales      
@@ -210,7 +206,7 @@ hoja.title = "Reservas Manual"
 hoja.append(columnas)
 
 # Escribir los datos en las filas siguientes
-# preservas contiene: id, idAsignatura,inicio,fin,idgrupo,idespacio,numpractica,observaciones,diaSemana, diaEina, procesado, inicio_anyo_curso
+# prereservas contiene: id, idAsignatura,inicio,fin,idgrupo,idespacio,numpractica,observaciones,diaSemana, diaEina, procesado, inicio_anyo_curso
 for fila in resultados:
     nueva_fila = list(fila)
     try:

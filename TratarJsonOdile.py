@@ -30,8 +30,8 @@ r = requests.get(config["url"])
 data = r.json()
 
 # Vaciar la tabla asignaturas antes de insertar nuevos datos
-#cursor.execute("TRUNCATE TABLE asignaturas")
-#conexion.commit()
+cursor.execute("TRUNCATE TABLE asignaturas")
+conexion.commit()
 
 # Verificar el primer elemento de la lista
 if isinstance(data, list) and len(data) > 0:
