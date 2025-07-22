@@ -47,11 +47,8 @@ cursor.execute("TRUNCATE TABLE restricciones")
 conexion.commit()
 
 for clave, valor in config.items():
-    if "virtuales" in clave.lower():  # Verifica si "excel" está en el nombre de la clave
-        # Vaciar la tabla prereservas antes de insertar nuevos datos
-        #cursor.execute("TRUNCATE TABLE prereservas")
-        #conexion.commit()
-        
+    if "virtuales" in clave.lower():  # Verifica si "virtuales" está en el nombre de la clave
+                
         contador_excel += 1
         print(f"Clave: {clave}, Valor: {valor}")
 
@@ -88,7 +85,7 @@ for clave, valor in config.items():
 
             # Ejecutar la consulta con los valores
             cursor.execute(consulta, (cod_asignatura, grupo_a, grupo_b))
-    if "restricciones" in clave.lower():  # Verifica si "excel" está en el nombre de la clave
+    if "restricciones" in clave.lower():  # Verifica si "restricciones" está en el nombre de la clave
         contador_excel += 1
         print(f"Clave: {clave}, Valor: {valor}")
         
@@ -99,7 +96,7 @@ for clave, valor in config.items():
         libro = load_workbook(ruta_excel)
         print(libro.sheetnames)
         # Seleccionar la hoja 'Hoja 1'
-        hoja = libro['Hoja 1']  # Asegúrate de usar el nombre exacto de la hoja
+        hoja = libro['Hoja 1']  
 
         # Iterar sobre las filas desde la fila 4
         for fila in hoja.iter_rows(min_row=4, values_only=True):
@@ -144,7 +141,7 @@ for clave, valor in config.items():
                         # Ejecutar la consulta con los valores
                         cursor.execute(consulta, (cod_asignatura, practicas, codespacio, 3))
 
-    if "lugares" in clave.lower():  # Verifica si "excel" está en el nombre de la clave
+    if "lugares" in clave.lower():  # Verifica si "lugares" está en el nombre de la clave
         contador_excel += 1
         print(f"Clave: {clave}, Valor: {valor}")
 
@@ -172,10 +169,10 @@ for clave, valor in config.items():
             sala2 = fila[9]  # Sala 2, si existe
             sala10 = fila[10]  # Sala 10, si existe
             
-            print(f"manual: {manual}")
-            print("tipo manual: ", type(manual))
+            #print(f"manual: {manual}")
+            #print("tipo manual: ", type(manual))
             
-            if labdiis is True:                
+            if labdiis is True: #prevalece el valor de labdiis si es True               
                 activo = 1
             else:                
                 if aulacentro is True: aulacentro = 1 
@@ -183,7 +180,7 @@ for clave, valor in config.items():
                 if aulateoria is True: aulateoria = 1
                 else: aulateoria = 0
                 if aulacentro == 1 or aulateoria == 1:
-                    activo = 0
+                    activo = 0 #si alula centro o aula teoria estan activas desactivamos la asignatura para que no la coja el algoritmo de asignacion
                 else: activo=1
 
             if sala2 in [True, "=TRUE()", "SI", "true", "True"]:
@@ -206,7 +203,7 @@ for clave, valor in config.items():
              
             if rotada is None: rotada=0;
                
-            # Preparar la consulta SQL
+            #Preparar la consulta SQL
             #Tabla Asignaturas: codAsignatura, nbAsignatura, codArea, acronimo, centro, cuatrimestre, manual, vinculada, activo, aulacentro, aulateoria, rotada
             consulta = """
                 update asignaturas set manual=%s, activo=%s, aulacentro=%s, aulateoria=%s, rotada=%s, sala2=%s, sala10=%s
